@@ -292,10 +292,10 @@ footer{
 
 
       }
-      .screen{
-        /* z-index: 1; */  /* probando Kathy */
+ /*      .screen{
+        z-index: 1;
 
-      }
+      } */
       header label {
           display: block ;
           font-size: 28px;
@@ -329,7 +329,7 @@ footer{
           display: block;
           list-style: none;
           background: rgba(10, 10, 10, 0.856);
-          width: 91vw;
+          width: 96vw;
           height: 100vh;
           padding-top: 2%;
       }

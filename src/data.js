@@ -88,11 +88,11 @@ export const orderBy = (poke, order) => {
         return 1;
         }
         {
-         return 0;
+          return 0;
         }
       }
     }
-// numero ascendente
+    // numero ascendente
     if (order === 'numUp') {
       if (nameA > nameB) {
         return -1;
