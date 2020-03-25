@@ -274,7 +274,8 @@ footer{
 
        header{
         background-color: transparent;
-        /* z-index: 99; */
+        width: 2%;
+         z-index: 99;
     }
       #icon{
           display: block;
@@ -301,7 +302,7 @@ footer{
       main{
           position: relative;
           margin-top: 15%;
-          background-color: lightgoldenrodyellow;
+          /* background-color: lightgoldenrodyellow; */
           z-index: 0; /* probando kathy */
       }
       .menu {
@@ -311,7 +312,7 @@ footer{
           width: 100%;
           transition: all 1s;
           transform: translateX(-100%);
-          z-index: 99;
+          /* z-index: 99; */
 
 
       }
@@ -321,7 +322,7 @@ footer{
           background: rgba(10, 10, 10, 0.856);
           width: 100vw;
           height: 100vh;
-            padding-top: 2%;
+          padding-top: 2%;
       }
       .menu ul li{
           margin-left: 4%;
