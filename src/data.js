@@ -20,7 +20,7 @@ export const showInfo = (pokes,input) => {
               </section>
                     <div id="hW" class="infoCont">
                       <p>Height:<span>${poke.size.height}</span></p>
-                      <p>Weight:<span>${poke.size.weight}</span></p>  
+                      <p>Weight:<span>${poke.size.weight}</span></p>
                       <p>Base Attack:<span>${poke.stats['base-attack']}</span></p>
                     </div>
                     <p id="about" class="infoCont">${poke.about}</p>
@@ -79,7 +79,7 @@ export const orderBy = (poke, order) => {
     }
     //  numero descendente
 
-    if (order === 'numUp') {
+    if (order === 'numDown') {
       if (numA > numB) {
         return -1;
       }
@@ -89,6 +89,20 @@ export const orderBy = (poke, order) => {
         }
         {
          return 0;
+        }
+      }
+    }
+// numero ascendente
+    if (order === 'numUp') {
+      if (nameA > nameB) {
+        return -1;
+      }
+      else {
+        if (nameA < nameB) {
+          return 1;
+        }
+        {
+          return 0;
         }
       }
     }

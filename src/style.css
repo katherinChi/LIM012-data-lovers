@@ -219,7 +219,14 @@ select,option{
     padding: 1%;
     padding-right: 9%;
     padding-left: 2%;
+    scrollbar-width: none;
     /* padding-top: 3%; */
+}
+select:focus{ outline: none;}
+option{
+    background: rgba(10, 10, 10, 0.856);
+
+
 }
 
 #s3data{
@@ -274,12 +281,15 @@ footer{
 
        header{
         background-color: transparent;
-        width: 2%;
-         z-index: 99;
+        width: 5%;
+        z-index: 99;
+        margin-top: 5%;
+        margin-left: 1.8%;
     }
       #icon{
           display: block;
           cursor: pointer;
+
 
       }
       .screen{
@@ -289,7 +299,6 @@ footer{
       header label {
           display: block ;
           font-size: 28px;
-          margin-left: 4%;
           margin-top: 6%;
 
       }
@@ -301,7 +310,7 @@ footer{
       } */
       main{
           position: relative;
-          margin-top: 15%;
+          margin-top: 12%;
           /* background-color: lightgoldenrodyellow; */
           z-index: 0; /* probando kathy */
       }
@@ -309,7 +318,7 @@ footer{
           position: relative;
           top: 10%;
           left:0;
-          width: 100%;
+          /* width: 100%; */
           transition: all 1s;
           transform: translateX(-100%);
           /* z-index: 99; */
@@ -320,7 +329,7 @@ footer{
           display: block;
           list-style: none;
           background: rgba(10, 10, 10, 0.856);
-          width: 100vw;
+          width: 91vw;
           height: 100vh;
           padding-top: 2%;
       }
