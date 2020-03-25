@@ -274,7 +274,7 @@ footer{
 
        header{
         background-color: transparent;
-        z-index: 99;
+        /* z-index: 99; */
     }
       #icon{
           display: block;
@@ -282,6 +282,7 @@ footer{
 
       }
       .screen{
+        /* z-index: 1; */  /* probando Kathy */
 
       }
       header label {
@@ -291,16 +292,17 @@ footer{
           margin-top: 6%;
 
       }
-      main{
+/*       main{
           position: relative;
           background-color: teal;
           margin-top: -120%;
           z-index: 0;
-      }
+      } */
       main{
           position: relative;
           margin-top: 15%;
-          z-index: 0;
+          background-color: lightgoldenrodyellow;
+          z-index: 0; /* probando kathy */
       }
       .menu {
           position: relative;
