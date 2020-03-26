@@ -124,22 +124,28 @@ const candyCalculator = (param1, param2) => {
 };
 
 export const showInfoCalc = (pokes, inputName, inputNum) => {
-  const inputNamePok = inputName.value;
+  const inputNamePoke = inputName.value;
   const inputNumCandy = inputNum.value;
   let candyCalc = '';
-  const nameFilt = pokes.filter(pok => inputNamePok === pok.name);
-  const candyCost = nameFilt[0].evolution['next-evolution'][0]['candy-cost'];
-  const nameEvolution = nameFilt[0].evolution['next-evolution'][0].name;
-  const searchEvolution = pokes.filter(x => nameEvolution === x.name);
-  const imgEvolution = searchEvolution[0].img;
-  candyCalc = `
-    <div id="candyCalc">
-      <div id="contImg">
-        <img src="${imgEvolution}" alt="pokemonImage">
-      </div>
-      <span id="nombreEvolution">${nameEvolution}</span>
-      <span id="candyCost"> You need ${candyCalculator(candyCost, inputNumCandy)} candies</span>
-    </div>`;
+  const nameFilt = pokes.filter(pok => inputNamePoke === pok.name);
+  /* console.log(nameFilt.length); */
+  if (nameFilt.length === 0) {
+    return 'Invalid name';
+  }
+  {
+    const candyCost = nameFilt[0].evolution['next-evolution'][0]['candy-cost'];
+    const nameEvolution = nameFilt[0].evolution['next-evolution'][0].name;
+    const searchEvolution = pokes.filter(x => nameEvolution === x.name);
+    const imgEvolution = searchEvolution[0].img;
+    candyCalc = `
+      <div id="candyCalc">
+        <div id="contImg">
+          <img src="${imgEvolution}" alt="pokemonImage">
+        </div>
+        <span id="nombreEvolution">${nameEvolution}</span>
+        <span id="candyCost"> You need ${candyCalculator(candyCost, inputNumCandy)} candies</span>
+      </div>`;
 
-  return candyCalc;
+    return candyCalc;
+  }
 };
