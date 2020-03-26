@@ -1,6 +1,6 @@
 //  Funcionalidad en data
 //  muestro la info
-export const showInfo = (pokes,input) => {
+export const showInfo = (pokes, input) => {
   const inputVal = input.value;
   let info = '';
   pokes.forEach((poke) => {
@@ -94,11 +94,11 @@ export const orderBy = (poke, order) => {
     }
     // numero ascendente
     if (order === 'numUp') {
-      if (nameA > nameB) {
+      if (numA < numB) {
         return -1;
       }
       else {
-        if (nameA < nameB) {
+        if (numA > numB) {
           return 1;
         }
         {
@@ -114,4 +114,32 @@ export const typeFilter = (poke, tipo) => {
   // eslint-disable-next-line no-shadow
   const arrFilt = poke.filter(poke => poke.type.includes(tipo)); // retorna un boolean
   return arrFilt;
+};
+
+//  Cálculo
+
+const candyCalculator = (param1, param2) => {
+  const resta = param1 - param2;
+  return resta;
+};
+
+export const showInfoCalc = (pokes, inputName, inputNum) => {
+  const inputNamePok = inputName.value;
+  const inputNumCandy = inputNum.value;
+  let candyCalc = '';
+  const nameFilt = pokes.filter(pok => inputNamePok === pok.name);
+  const candyCost = nameFilt[0].evolution['next-evolution'][0]['candy-cost'];
+  const nameEvolution = nameFilt[0].evolution['next-evolution'][0].name;
+  const searchEvolution = pokes.filter(x => nameEvolution === x.name);
+  const imgEvolution = searchEvolution[0].img;
+  candyCalc = `
+    <div id="candyCalc">
+      <div id="contImg">
+        <img src="${imgEvolution}" alt="pokemonImage">
+      </div>
+      <span id="nombreEvolution">${nameEvolution}</span>
+      <span id="candyCost"> You need ${candyCalculator(candyCost, inputNumCandy)} candies</span>
+    </div>`;
+
+  return candyCalc;
 };

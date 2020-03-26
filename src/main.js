@@ -2,7 +2,7 @@
 //  {} cuando solo llamas a una funcion determinada no a toda la hoja
 import data from './data/pokemon/pokemon.js';
 import {
-  showInfo, showAllData, orderBy, typeFilter,
+  showInfo, showAllData, orderBy, typeFilter, showInfoCalc,
 } from './data.js';
 
 const inputSearchElem = document.getElementById('inputSearch');
@@ -12,6 +12,7 @@ const screen1Elem = document.getElementById('screen1');
 const screen2Elem = document.getElementById('screen2');
 const screen3Elem = document.getElementById('screen3');
 const screen4Elem = document.getElementById('screen4');
+const screen5Elem = document.getElementById('screen5');
 const select1Elem = document.getElementById('selectOrder');
 const select2Elem = document.getElementById('selectType');
 const s3dataElem = document.getElementById('s3data');
@@ -20,6 +21,7 @@ const s3dataElem = document.getElementById('s3data');
 const mHome = document.getElementById('home');
 const mPokedex = document.getElementById('pokedex');
 const mCompare = document.getElementById('compare');
+const mCandy = document.getElementById('candiesCalc');
 // Segunda Pantalla -Buscador
 /* let fun=(pokemones,data)=>{
   let je=[];
@@ -42,12 +44,14 @@ mHome.addEventListener('click', () => {
   screen2Elem.style.display = 'none';
   screen3Elem.style.display = 'none';
   screen4Elem.style.display = 'none';
+  screen5Elem.style.display = 'none';
   inputSearchElem.value = '';
 });
 // Muestra por default Pok
 mPokedex.addEventListener('click', () => {
   screen1Elem.style.display = 'none';
   screen2Elem.style.display = 'none';
+  screen5Elem.style.display = 'none';
   screen3Elem.style.display = 'flex';
   s3dataElem.innerHTML = `${pokemones.map(showAllData).join('')}`;
 });
@@ -65,6 +69,25 @@ mCompare.addEventListener('click', () => {
   screen1Elem.style.display = 'none';
   screen2Elem.style.display = 'none';
   screen3Elem.style.display = 'none';
+  screen5Elem.style.display = 'none';
   screen4Elem.style.display = 'flex';
   // screen4Elem.innerHTML = `${showInfo(pokemones, inputSearchIconCElem)}`;
+});
+
+const calcular = document.getElementById('btn-calc');
+const inputNamePoke = document.getElementById('inputSearchCalc');
+const numCandies = document.getElementById('inputNumCalc');
+/* let candiesHTML = ""; */
+mCandy.addEventListener('click', () => {
+  screen1Elem.style.display = 'none';
+  screen2Elem.style.display = 'none';
+  screen3Elem.style.display = 'none';
+  screen4Elem.style.display = 'none';
+  screen5Elem.style.display = 'block';
+  inputNamePoke.value = '';
+  numCandies.value = '';
+});
+
+calcular.addEventListener('click', () => {
+  screen5Elem.innerHTML = `${showInfoCalc(pokemones, inputNamePoke, numCandies)}`;
 });
