@@ -113,8 +113,13 @@ export const showInfoCalc = (pokes, inputName, inputNum) => {
   let candyCalc = '';
   const nameFilt = pokes.filter(pok => inputNamePoke === pok.name);
   /* console.log(nameFilt.length); */
+ /*  console.log(nameFilt[0].evolution['next-evolution']); */
+ /* console.log(nameFilt.length === 0); */
   if (nameFilt.length === 0) {
     return 'Invalid name';
+  }
+  else if ((nameFilt[0].evolution['next-evolution']) === undefined){
+    return 'el pokemon ya tuvo todas sus evoluciones';
   }
   {
     const candyCost = nameFilt[0].evolution['next-evolution'][0]['candy-cost'];

@@ -252,7 +252,7 @@ option{
 #screen5{
 
     margin-top: 5em;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
 
 }
