@@ -83,7 +83,7 @@ mCandy.addEventListener('click', () => {
   screen2Elem.style.display = 'none';
   screen3Elem.style.display = 'none';
   screen4Elem.style.display = 'none';
-  screen5Elem.style.display = 'block';
+  screen5Elem.style.display = 'flex';
   inputNamePoke.value = '';
   numCandies.value = '';
 });
