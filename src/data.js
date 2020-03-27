@@ -54,58 +54,42 @@ export const orderBy = (poke, order) => {
       if (nameA > nameB) {
         return 1;
       }
-      else {
-        if (nameA < nameB) {
-          return -1;
-        }
-        {
-          return 0;
-        }
+      if (nameA < nameB) {
+        return -1;
       }
-      /* return (nameA > nameB) ? 1 : ((nameA < nameB) ? -1 : 0); */
+      return 0;
     }
+    /* return (nameA > nameB) ? 1 : ((nameA < nameB) ? -1 : 0); */
     if (order === 'desc') {
       if (nameA > nameB) {
         return -1;
       }
-      else {
-        if (nameA < nameB) {
-          return 1;
-        }
-        {
-          return 0;
-        }
+      if (nameA < nameB) {
+        return 1;
       }
+      return 0;
     }
     //  numero descendente
-
     if (order === 'numDown') {
       if (numA > numB) {
         return -1;
       }
-      else {
-        if (numA < numB) {
+      if (numA < numB) {
         return 1;
-        }
-        {
-          return 0;
-        }
       }
+      return 0;
     }
     // numero ascendente
     if (order === 'numUp') {
       if (numA < numB) {
         return -1;
       }
-      else {
-        if (numA > numB) {
-          return 1;
-        }
-        {
-          return 0;
-        }
+      if (numA > numB) {
+        return 1;
       }
+      return 0;
     }
+    return arrSort; /* el error del eslint se soluciona y no veo cambios en el front//verificar!! */
   });
   return arrSort;
 };

@@ -1,5 +1,5 @@
-/* import { typeFilter } from '../src/data'; */
-
+/* import { typeFilter } from '../src/data';
+ */
 
 /*
 describe('typeFilter', () => {
@@ -83,7 +83,7 @@ describe('Filtra pokemones por tipo', () => {
  */
 // otro intento
 
-describe('filtrar', () => {
+/* describe('filtrar', () => {
   const input = [{
     name: 'bulbasaur',
     type: [
@@ -110,3 +110,4 @@ describe('filtrar', () => {
     expect(typeFilter(input, 'normal')).toBe(output1);
   });
 });
+ */
