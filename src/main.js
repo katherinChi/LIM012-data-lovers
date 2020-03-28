@@ -16,6 +16,7 @@ const screen5Elem = document.getElementById('screen5');
 const select1Elem = document.getElementById('selectOrder');
 const select2Elem = document.getElementById('selectType');
 const s3dataElem = document.getElementById('s3data');
+const s5dataElem = document.getElementById('s5data');
 // const s3dataElem = document.getElementById('s3data');
 // document.getElementsByTagName(select[]);
 const mHome = document.getElementById('home');
@@ -89,5 +90,5 @@ mCandy.addEventListener('click', () => {
 });
 
 calcular.addEventListener('click', () => {
-  screen5Elem.innerHTML = `${showInfoCalc(pokemones, inputNamePoke, numCandies)}`;
+  s5dataElem.innerHTML = `${showInfoCalc(pokemones, inputNamePoke, numCandies)}`;
 });

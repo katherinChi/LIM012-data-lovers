@@ -1,7 +1,7 @@
 //  Funcionalidad en data
 //  muestro la info
 export const showInfo = (pokes, input) => {
-  const inputVal = input.value;
+  const inputVal = input.value.toLowerCase();
   let info = '';
   pokes.forEach((poke) => {
     if (inputVal === poke.name) {
@@ -108,17 +108,17 @@ const candyCalculator = (param1, param2) => {
 };
 
 export const showInfoCalc = (pokes, inputName, inputNum) => {
-  const inputNamePoke = inputName.value;
+  const inputNamePoke = inputName.value.toLowerCase();
   const inputNumCandy = inputNum.value;
   let candyCalc = '';
   const nameFilt = pokes.filter(pok => inputNamePoke === pok.name);
   /* console.log(nameFilt.length); */
- /*  console.log(nameFilt[0].evolution['next-evolution']); */
- /* console.log(nameFilt.length === 0); */
+  /*  console.log(nameFilt[0].evolution['next-evolution']); */
+  /* console.log(nameFilt.length === 0); */
   if (nameFilt.length === 0) {
     return 'Invalid name';
   }
-  else if ((nameFilt[0].evolution['next-evolution']) === undefined){
+  if ((nameFilt[0].evolution['next-evolution']) === undefined) {
     return 'el pokemon ya tuvo todas sus evoluciones';
   }
   {
@@ -127,12 +127,18 @@ export const showInfoCalc = (pokes, inputName, inputNum) => {
     const searchEvolution = pokes.filter(x => nameEvolution === x.name);
     const imgEvolution = searchEvolution[0].img;
     candyCalc = `
-      <div id="candyCalc">
-        <div id="contImg">
-          <img src="${imgEvolution}" alt="pokemonImage">
+      <div id="s5CandyCalc">
+        <div id="candyCalc">
+          <div id="contImg">
+            <img src="${imgEvolution}" alt="pokemonImage">
+          </div>
+          <div id="contCandyCost">
+            <p class="contW"> You need </p>
+            <span id="candyCost" class="contW"> ${candyCalculator(candyCost, inputNumCandy)} </span>
+            <p class="contW"> Candies </p>
+          </div>
         </div>
         <span id="nombreEvolution">${nameEvolution}</span>
-        <span id="candyCost"> You need ${candyCalculator(candyCost, inputNumCandy)} candies</span>
       </div>`;
 
     return candyCalc;
