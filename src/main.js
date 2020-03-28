@@ -84,11 +84,13 @@ mCandy.addEventListener('click', () => {
   screen2Elem.style.display = 'none';
   screen3Elem.style.display = 'none';
   screen4Elem.style.display = 'none';
+  s5dataElem.style.display = 'none';
   screen5Elem.style.display = 'flex';
   inputNamePoke.value = '';
   numCandies.value = '';
 });
 
 calcular.addEventListener('click', () => {
+  s5dataElem.style.display = 'flex';
   s5dataElem.innerHTML = `${showInfoCalc(pokemones, inputNamePoke, numCandies)}`;
 });

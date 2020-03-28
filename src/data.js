@@ -115,6 +115,7 @@ export const showInfoCalc = (pokes, inputName, inputNum) => {
   /* console.log(nameFilt.length); */
   /*  console.log(nameFilt[0].evolution['next-evolution']); */
   /* console.log(nameFilt.length === 0); */
+  /* console.log(nameFilt[0].evolution['next-evolution'][0]['candy-cost']); */
   if (nameFilt.length === 0) {
     return 'Invalid name';
   }
@@ -140,7 +141,6 @@ export const showInfoCalc = (pokes, inputName, inputNum) => {
         </div>
         <span id="nombreEvolution">${nameEvolution}</span>
       </div>`;
-
     return candyCalc;
   }
 };
