@@ -51,7 +51,8 @@
             <option value="">Order by</option>
             <option value="asc">A-Z</option>
             <option value="desc">Z-A</option>
-            <option value="numUp">Number</option>
+            <option value="numUp">Number ↑</option>
+            <option value="numDown">Number ↓</option>
           </select>
           <select id="selectType">
             <option value="">Types</option>
@@ -76,7 +77,6 @@
         </div>
       </div>
       <div id="screen4" class="screen inactive">
-        <p>Compara aqui</p>
         <div id="compareBut" class="buttons">
           <section class="inputCont" >
             <input type="text" name="inputSearch"  placeholder="Find your pokemon here!">
@@ -87,7 +87,19 @@
             <img name="searchIconC" src="img\lupitaa.png"   alt="lensIcon">
           </section>
         </div>
-        <!-- <p>holaaaa</p> -->
+      </div>
+      <div id="screen5" class="screen inactive">
+        <p class="namePok">Candy Calc</p>
+        <div class="inputContCalc" >
+          <input type="text" name="" class="inputsCalc" id="inputSearchCalc"  placeholder="Pokemon">
+          <input type="number" name="" class="inputsCalc" id="inputNumCalc"  placeholder="Candies you've got">
+        </div>
+        <div id="contCalc">
+          <button id="btn-calc">CALCULAR</button>
+        </div>
+        <div id="resultCandyCost">
+          <span id="s5data"></span>
+        </div>
       </div>
     </main>
    <footer>

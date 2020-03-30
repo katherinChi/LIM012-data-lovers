@@ -1,5 +1,5 @@
 import { typeFilter } from '../src/data';
-import data from './data/pokemon/pokemon.js';
+
 
 /*
 describe('typeFilter', () => {
@@ -81,3 +81,32 @@ describe('Filtra pokemones por tipo', () => {
     });
   });
  */
+// otro intento
+
+describe('filtrar', () => {
+  const input = [{
+    name: 'bulbasaur',
+    type: [
+      'grass',
+      'poison'],
+  },
+  {
+    name: 'geodude',
+    type: [
+      'rock',
+      'ground'],
+  },
+  {
+    name: 'porygon',
+    type: [
+      'normal'],
+  }];
+  const output1 = [{
+    name: 'porygon',
+    type: [
+      'normal'],
+  }];
+  test('Realizamos el filtrado ', () => {
+    expect(typeFilter(input, 'type', 'normal')).toBe(output1);
+  });
+});

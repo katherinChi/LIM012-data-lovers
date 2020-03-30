@@ -138,7 +138,7 @@ p{
 .namePok {
     margin-bottom: 1%;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 2.3em;
     font-family: Cabin;
     display: flex;
     justify-content: center;
@@ -236,13 +236,17 @@ select,option{
     padding: 1%;
     padding-right: 9%;
     padding-left: 2%;
+    scrollbar-width: none;
     /* padding-top: 3%; */
+}
+select:focus{ outline: none;}
+option{
+    background: rgba(10, 10, 10, 0.856);
 }
 .active{
     display: block;
 }
 .inactive{
-    display: none;
 }
 
 #s3data{
@@ -271,7 +275,101 @@ select,option{
     background-color: purple;
     margin: 5%;
 }
+/* QUINTA PANTALLA */
+#screen5{
 
+    margin-top: 5em;
+    /* display: flex; */
+    flex-direction: column;
+
+}
+.inputContCalc{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.inputsCalc{
+    margin-top: 4%;
+    margin-bottom: 5%;
+    border-style: solid;
+    width: 50%;
+    border-width: 3px;
+    border-color: transparent;
+    border-bottom-color: #ffffff;
+    font-size: 1.4em;
+}
+#contCalc{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+
+}
+#btn-calc{
+    background-color: rgba(207, 38, 38, 0.767);
+    font-size: 100%;
+    border-radius: 0.5em;
+    border: none;
+    width: 15em;
+    height: 2.5em;
+    outline: none;
+}
+#btn-calc:hover{
+    background-color: rgb(240, 111, 88);
+}
+
+/* RESULTADO CALCULAR */
+#candyCalc{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+}
+#contImg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+}
+#s5CandyCalc{
+    display: flex;
+    flex-direction: column;
+}
+#nombreEvolution{
+    margin-top: 5%;
+    text-transform: capitalize;
+    font-size: 2em;
+    text-align: center;
+}
+#contCandyCost{
+    background-color: rgba(211, 247, 202, 0.904);
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    width: 10em;
+    height: 5em;
+    font-size: 1.5em;
+    align-items: center;
+    margin-left: -13%;
+    margin-top: 3%;
+    z-index: 2;
+
+}
+.contW{
+    color: rgb(37, 35, 35);
+}
+#candyCost{
+    text-align: center;
+}
+#resultCandyCost{
+    display: flex;
+    margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
+}
 footer{
     position: fixed;
     width: 100%;
@@ -296,45 +394,48 @@ footer{
         /* background-repeat: no-repeat; */
         color: #FFFFFF;
     }
-
-    header{
+       header{
         background-color: transparent;
+        width: 5%;
         z-index: 99;
+        margin-top: 5%;
+        margin-left: 1.8%;
     }
-    #icon{
+      #icon{
           display: block;
           cursor: pointer;
 
-      }
-      .screen{
 
       }
+ /*      .screen{
+        z-index: 1;
+      } */
       header label {
           display: block ;
           font-size: 28px;
-          margin-left: 4%;
           margin-top: 6%;
 
       }
-      main{
+/*       main{
           position: relative;
           background-color: teal;
           margin-top: -120%;
           z-index: 0;
-      }
+      } */
       main{
           position: relative;
-          margin-top: 15%;
-          z-index: 0;
+          margin-top: 12%;
+          /* background-color: lightgoldenrodyellow; */
+          z-index: 0; /* probando kathy */
       }
       .menu {
           position: relative;
           top: 10%;
           left:0;
-          width: 100%;
+          /* width: 100%; */
           transition: all 1s;
           transform: translateX(-100%);
-          z-index: 99;
+          /* z-index: 99; */
 
 
       }
@@ -342,9 +443,9 @@ footer{
           display: block;
           list-style: none;
           background: rgba(10, 10, 10, 0.856);
-          width: 100vw;
+          width: 96vw;
           height: 100vh;
-            padding-top: 2%;
+          padding-top: 2%;
       }
       .menu ul li{
           margin-left: 4%;
@@ -426,13 +527,26 @@ footer{
         cursor: pointer;
      }
      #screen2{
-        background-color: tomato ;
+        /* background-color: tomato ; */
         backdrop-filter: brightness(0.4);
         margin: 0%;
         margin-top: 14%; /* para que aparezca debajo del menu */
 
         /* display:flex; */
         /* align-items:space-between; */
+    }
+    .inputContCalc{
+        display: flex;
+        flex-direction: column;
+    }
+    .inputsCalc{
+        width: 100%;
+        margin-bottom: 1em;
+        margin-top: 10%;
+        font-size: 1em;
+    }
+    #s5CandyCalc{
+        margin-top: -10%;
     }
 }
 /* @media screen and (max-width: 375px){

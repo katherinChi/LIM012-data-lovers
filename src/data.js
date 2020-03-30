@@ -42,41 +42,42 @@ export const orderBy = (poke, order) => {
       if (nameA > nameB) {
         return 1;
       }
-
       if (nameA < nameB) {
         return -1;
       }
-      {
-        return 0;
-      }
-      /* return (nameA > nameB) ? 1 : ((nameA < nameB) ? -1 : 0); */
+      return 0;
     }
+    /* return (nameA > nameB) ? 1 : ((nameA < nameB) ? -1 : 0); */
     if (order === 'desc') {
       if (nameA > nameB) {
         return -1;
       }
-
       if (nameA < nameB) {
         return 1;
       }
-      {
-        return 0;
-      }
+      return 0;
     }
     //  numero descendente
-
-    if (order === 'numUp') {
+    if (order === 'numDown') {
       if (numA > numB) {
         return -1;
       }
-
       if (numA < numB) {
         return 1;
       }
-      {
-        return 0;
-      }
+      return 0;
     }
+    // numero ascendente
+    if (order === 'numUp') {
+      if (numA < numB) {
+        return -1;
+      }
+      if (numA > numB) {
+        return 1;
+      }
+      return 0;
+    }
+    return arrSort; /* el error del eslint se soluciona y no veo cambios en el front//verificar!! */
   });
   return arrSort;
 };
@@ -86,6 +87,49 @@ export const typeFilter = (poke, tipo) => {
   const arrFilt = poke.filter(poke => poke.type.includes(tipo)); // retorna un boolean
   return arrFilt;
 };
+//  Cálculo
+
+const candyCalculator = (param1, param2) => {
+  const resta = param1 - param2;
+  return resta;
+};
+
+export const showInfoCalc = (pokes, inputName, inputNum) => {
+  const inputNamePoke = inputName.value.toLowerCase();
+  const inputNumCandy = inputNum.value;
+  let candyCalc = '';
+  const nameFilt = pokes.filter(pok => inputNamePoke === pok.name);
+  /* console.log(nameFilt.length); */
+  /*  console.log(nameFilt[0].evolution['next-evolution']); */
+  /* console.log(nameFilt.length === 0); */
+  /* console.log(nameFilt[0].evolution['next-evolution'][0]['candy-cost']); */
+  if (nameFilt.length === 0) {
+    return 'Invalid name';
+  }
+  if ((nameFilt[0].evolution['next-evolution']) === undefined) {
+    return 'el pokemon ya tuvo todas sus evoluciones';
+  }
+  {
+    const candyCost = nameFilt[0].evolution['next-evolution'][0]['candy-cost'];
+    const nameEvolution = nameFilt[0].evolution['next-evolution'][0].name;
+    const searchEvolution = pokes.filter(x => nameEvolution === x.name);
+    const imgEvolution = searchEvolution[0].img;
+    candyCalc = `
+      <div id="s5CandyCalc">
+        <div id="candyCalc">
+          <div id="contImg">
+            <img src="${imgEvolution}" alt="pokemonImage">
+          </div>
+          <div id="contCandyCost">
+            <p class="contW"> You need </p>
+            <span id="candyCost" class="contW"> ${candyCalculator(candyCost, inputNumCandy)} </span>
+            <p class="contW"> Candies </p>
+          </div>
+        </div>
+        <span id="nombreEvolution">${nameEvolution}</span>
+      </div>`;
+    return candyCalc;
+  }
 // Buscador
 export const searcher = (data, value) => {
   let info = '';
