@@ -5,8 +5,8 @@ import {
   showInfo, showAllData, orderBy, typeFilter, showInfoCalc,
 } from './data.js';
 
-const inputSearchElem = document.getElementById('inputSearch');
 const pokemones = data.pokemon;
+const inputSearchElem = document.getElementById('inputSearch');
 const searchIconElem = document.getElementById('searchIcon');
 const screen1Elem = document.getElementById('screen1');
 const screen2Elem = document.getElementById('screen2');
@@ -19,25 +19,16 @@ const s3dataElem = document.getElementById('s3data');
 const s5dataElem = document.getElementById('s5data');
 // const s3dataElem = document.getElementById('s3data');
 // document.getElementsByTagName(select[]);
-const mHome = document.getElementById('home');
-const mPokedex = document.getElementById('pokedex');
-const mCompare = document.getElementById('compare');
-const mCandy = document.getElementById('candiesCalc');
+const mHome = document.querySelector('#home');
+const mPokedex = document.querySelector('#pokedex');
+const mCompare = document.querySelector('#compare');
+const mCandy = document.querySelector('#candiesCalc');
 // Segunda Pantalla -Buscador
-/* let fun=(pokemones,data)=>{
-  let je=[];
-  for(let i in pokemones){
-    for(let j in data){
-  je.push(pokemones[i][data][j].name)}
-  }
-  console.log(je);}
-fun(pokemones,'special-attack'); */
-
-
 searchIconElem.addEventListener('click', () => {
   screen1Elem.style.display = 'none';
   screen2Elem.style.display = 'block';
-  screen2Elem.innerHTML = `${showInfo(pokemones, inputSearchElem)}`;
+  const inputVal = inputSearchElem.value;
+  screen2Elem.innerHTML = `${searcher(pokemones, inputVal)}`;
 });
 // Menu boton Home
 mHome.addEventListener('click', () => {
@@ -54,16 +45,25 @@ mPokedex.addEventListener('click', () => {
   screen2Elem.style.display = 'none';
   screen5Elem.style.display = 'none';
   screen3Elem.style.display = 'flex';
-  s3dataElem.innerHTML = `${pokemones.map(showAllData).join('')}`;
+  s3dataElem.innerHTML = `${pokemones.map(showInfo).join('')}`;
 });
+// Muestra Info al tocar al pokemon
+s3dataElem.addEventListener('click', (e)=>{
+  const numClick = e.target.id;
+  const clicked = pokemones.find(poke => poke.num === numClick);
+  screen2Elem.style.display = 'block';
+  //visibility = 'visible';
+  screen3Elem.style.display = 'none';
+  screen2Elem.innerHTML = `${searcher(pokemones, numClick)}`;
+})
 // Boton Select OrderBy
 select1Elem.addEventListener('change', () => {
   const select1Value = select1Elem.value;
-  s3dataElem.innerHTML = `${(orderBy(pokemones, select1Value)).map(showAllData).join('')}`;
+  s3dataElem.innerHTML = `${(orderBy(pokemones, select1Value)).map(showInfo).join('')}`;
 });
 select2Elem.addEventListener('change', () => {
   const select2Value = select2Elem.value.toLowerCase();
-  s3dataElem.innerHTML = `${(typeFilter(pokemones, select2Value)).map(showAllData).join('')}`;
+  s3dataElem.innerHTML = `${(typeFilter(pokemones, select2Value)).map(showInfo).join('')}`;
 });
 
 mCompare.addEventListener('click', () => {
