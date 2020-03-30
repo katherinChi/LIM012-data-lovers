@@ -85,7 +85,6 @@ export const typeFilter = (poke, tipo) => {
   // eslint-disable-next-line no-shadow
   const arrFilt = poke.filter(poke => poke.type.includes(tipo)); // retorna un boolean
   return arrFilt;
-<<<<<<< HEAD
 };
 // Buscador
 export const searcher = (data, value) => {
@@ -100,6 +99,3 @@ export const searcher = (data, value) => {
   }
   return 'El nombre ingresado no es correcto';
 };
-=======
-};
->>>>>>> 10d78910f7b3c0856157af67a2cc55f683689a00
