@@ -89,7 +89,7 @@ export const typeFilter = (poke, tipo) => {
 };
 //  Cálculo
 
-const candyCalculator = (param1, param2) => {
+export const candyCalculator = (param1, param2) => {
   const resta = param1 - param2;
   return resta;
 };
@@ -130,6 +130,7 @@ export const showInfoCalc = (pokes, inputName, inputNum) => {
       </div>`;
     return candyCalc;
   }
+};
 // Buscador
 export const searcher = (data, value) => {
   let info = '';

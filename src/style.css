@@ -247,6 +247,7 @@ option{
     display: block;
 }
 .inactive{
+    display: none;
 }
 
 #s3data{
@@ -261,20 +262,7 @@ option{
     cursor: pointer;
     color: #000000;
 }
-#screen4{
-    width: 100%;
-    margin-top: 5em;
-    flex-direction: column;
-}
-#screen4 section{
-    background-color: pink;
-    margin: 2%;
-    max-width: 30%;
-}
-#compareBut{
-    background-color: purple;
-    margin: 5%;
-}
+
 /* QUINTA PANTALLA */
 #screen5{
 
