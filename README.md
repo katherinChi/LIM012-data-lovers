@@ -221,7 +221,7 @@ diseño debe seguir los fundamentos de _visual design_. -->
 
 #### Testeos de usabilidad
 
-Se realizó el test de usabilidad en 4 usuarios y el resultado mostró lo siguiente:
+Se realizó el test de usabilidad en 5 usuarios y el resultado mostró lo siguiente:
 ##### Usuario 1:
 Mostró demora al localizar los botones necesarios para realizar cada tarea encomendada.
 El tener tanta información conglomerada lo confundía. Para solucionarlo decidimos dejar de lado la opción de búsqueda avanzada y colocar la información que contenía como parte del menu.
