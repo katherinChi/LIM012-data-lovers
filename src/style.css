@@ -68,7 +68,7 @@ main{
     padding:2%;
 }
 .screen{
-    /* background-color:blueviolet; */
+    /* background-color:red; */
     backdrop-filter: brightness(0.4);
     margin: 0%;
 }
@@ -147,7 +147,7 @@ p{
 #firstRow{
     display:flex;
     justify-content: space-around;
-    background-color: white;
+    background-color: black;
     margin: 1% 10%;
     padding: 1%10%;
     align-content:space-around;
@@ -247,6 +247,7 @@ option{
     display: block;
 }
 .inactive{
+    display: none;
 }
 
 #s3data{
@@ -267,7 +268,7 @@ option{
     flex-direction: column;
 }
 #screen4 section{
-    background-color: pink;
+    /* background-color: pink; */
     margin: 2%;
     max-width: 30%;
 }

@@ -2,7 +2,7 @@
 //  {} cuando solo llamas a una funcion determinada no a toda la hoja
 import data from './data/pokemon/pokemon.js';
 import {
-  showInfo, showAllData, orderBy, typeFilter, showInfoCalc,
+  showInfo, searcher, orderBy, typeFilter, showInfoCalc,
 } from './data.js';
 
 const pokemones = data.pokemon;
@@ -48,14 +48,14 @@ mPokedex.addEventListener('click', () => {
   s3dataElem.innerHTML = `${pokemones.map(showInfo).join('')}`;
 });
 // Muestra Info al tocar al pokemon
-s3dataElem.addEventListener('click', (e)=>{
+s3dataElem.addEventListener('click', (e) => {
   const numClick = e.target.id;
-  const clicked = pokemones.find(poke => poke.num === numClick);
+  // const clicked = pokemones.find(poke => poke.num === numClick);
   screen2Elem.style.display = 'block';
-  //visibility = 'visible';
+  // visibility = 'visible';
   screen3Elem.style.display = 'none';
   screen2Elem.innerHTML = `${searcher(pokemones, numClick)}`;
-})
+});
 // Boton Select OrderBy
 select1Elem.addEventListener('change', () => {
   const select1Value = select1Elem.value;
@@ -65,6 +65,12 @@ select2Elem.addEventListener('change', () => {
   const select2Value = select2Elem.value.toLowerCase();
   s3dataElem.innerHTML = `${(typeFilter(pokemones, select2Value)).map(showInfo).join('')}`;
 });
+// Compare
+const poke1 = document.getElementsByName('comparePoke')[0];
+const poke2 = document.getElementsByName('comparePoke')[1];
+const searchCompEl = document.querySelector('#searchIconC');
+// const inputCompEl = document.querySelectorAll('input');
+const inputCompEl = document.getElementById('inputComp');
 
 mCompare.addEventListener('click', () => {
   screen1Elem.style.display = 'none';
@@ -74,6 +80,13 @@ mCompare.addEventListener('click', () => {
   screen4Elem.style.display = 'flex';
   // screen4Elem.innerHTML = `${showInfo(pokemones, inputSearchIconCElem)}`;
 });
+searchCompEl.addEventListener('click', () => {
+  const inVa = inputCompEl.value;
+  // console.log(inVa);
+  poke1.innerHTML = `jejeje ${searcher(pokemones, inVa)}`;
+  poke2.innerHTML = 'jejeje';
+});
+
 
 const calcular = document.getElementById('btn-calc');
 const inputNamePoke = document.getElementById('inputSearchCalc');

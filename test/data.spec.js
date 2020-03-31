@@ -106,7 +106,7 @@ describe('filtrar', () => {
     type: [
       'normal'],
   }];
-  test('Realizamos el filtrado ', () => {
-    expect(typeFilter(input, 'type', 'normal')).toBe(output1);
+  it('Realizamos el filtrado ', () => {
+    expect(typeFilter(input, 'normal')).toEqual(output1);
   });
 });

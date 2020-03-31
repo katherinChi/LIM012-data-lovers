@@ -85,15 +85,14 @@ export const orderBy = (poke, order) => {
 export const typeFilter = (poke, tipo) => {
   // eslint-disable-next-line no-shadow
   const arrFilt = poke.filter(poke => poke.type.includes(tipo)); // retorna un boolean
+  // console.log(arrFilt);
   return arrFilt;
 };
 //  Cálculo
-
 const candyCalculator = (param1, param2) => {
   const resta = param1 - param2;
   return resta;
 };
-
 export const showInfoCalc = (pokes, inputName, inputNum) => {
   const inputNamePoke = inputName.value.toLowerCase();
   const inputNumCandy = inputNum.value;
@@ -130,6 +129,7 @@ export const showInfoCalc = (pokes, inputName, inputNum) => {
       </div>`;
     return candyCalc;
   }
+};
 // Buscador
 export const searcher = (data, value) => {
   let info = '';

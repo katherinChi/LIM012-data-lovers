@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
@@ -27,10 +26,10 @@
       <label class="fas fa-bars" for="btn-menu" id="icon"></label>
       <nav class="menu">
         <ul>
-          <li id="home" href="#" > Home </li>
-          <li id="pokedex" href="#"> Pokedex </li>
-          <li id="candiesCalc" href="#"> Candies Calc </li>
-          <li id="compare" href="#"> Compare </li>
+          <li id="home" > Home </li>
+          <li id="pokedex" > Pokedex </li>
+          <li id="candiesCalc" > Candies Calc </li>
+          <li id="compare"> Compare </li>
         </ul>
       </nav>
     </header>
@@ -57,20 +56,20 @@
           <select id="selectType">
             <option value="">Types</option>
             <option value="Grass">Grass</option>
-            <option value= "Poison">Poison</option>
+            <option value="Poison">Poison</option>
             <option value="Fire">Fire</option>
-            <option value= "Water">Water</option>
-            <option value= "Normal">Ground</option>
-            <option value= "Fighting">Fighting</option>
-            <option value= "Rock">Rock</option>
+            <option value="Water">Water</option>
+            <option value="Normal">Ground</option>
+            <option value="Fighting">Fighting</option>
+            <option value="Rock">Rock</option>
             <option value="Ice">Ice </option>
-            <option value= "Flying">Flying</option>
-            <option value= "Bug">Bug</option>
+            <option value="Flying">Flying</option>
+            <option value="Bug">Bug</option>
             <option value="Electric">Electric</option>
-            <option value= "Fairy">Fairy</option>
-            <option value= "Psychic">Psychic</option>
+            <option value="Fairy">Fairy</option>
+            <option value="Psychic">Psychic</option>
             <option value="Ghost">Ghost </option>
-            <option value= "Dragon">Dragon</option>
+            <option value="Dragon">Dragon</option>
           </select>
         </div>
         <div id="s3data" class="">
@@ -78,13 +77,19 @@
       </div>
       <div id="screen4" class="screen inactive">
         <div id="compareBut" class="buttons">
-          <section class="inputCont" >
-            <input type="text" name="inputSearch"  placeholder="Find your pokemon here!">
-            <img name="searchIconComp" src="img\lupitaa.png"   alt="lensIcon">
+          <section id="je" class="screen">
+            <div  class="inputCont" >
+              <input type="text" id="inputComp"  placeholder="Find your pokemon here!">
+              <img id="searchIconC" src="img\lupitaa.png"   alt="lensIcon">
+            </div>  
+            <div name="comparePoke"></div> 
           </section>
-          <section class="inputCont" >
-            <input type="text" name="inputSearch"  placeholder="Find your pokemon here!">
-            <img name="searchIconC" src="img\lupitaa.png"   alt="lensIcon">
+          <section class="screen">
+            <div  class="inputCont" >
+              <input type="text" name="inputComp"  placeholder="Find your pokemon here!">
+              <img  class="searchIconC" src="img\lupitaa.png"   alt="lensIcon">
+            </div> 
+            <div name="comparePoke"></div> 
           </section>
         </div>
       </div>
