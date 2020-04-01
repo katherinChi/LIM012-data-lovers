@@ -89,7 +89,6 @@ export const typeFilter = (poke, tipo) => {
   return arrFilt;
 };
 //  Cálculo
-
 export const candyCalculator = (param1, param2) => {
   const resta = param1 - param2;
   return resta;

@@ -22,7 +22,7 @@ body{
     background-color:rgba(255,0,0,1);
 } */
 header {
-    background: #259738d5;
+    background:green;
     position: fixed;
     width: 100%;
     height: 9%;
@@ -39,6 +39,7 @@ ul{
     padding: 0;
     display: flex;
     justify-content: flex-end;
+    width: 100%;
 }
 li{
     margin: 1%;
@@ -49,7 +50,7 @@ li{
     display: none;
 }
 main{
-    /* background-color:blueviolet; */
+    background-color:blueviolet;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,12 +124,15 @@ input{
 }
 span{
     text-transform: capitalize;
+    /* width: 100%; */
 }
 p{
     /* font-weight: bold;
     font-family: 'gadugi'; */
     display: flex;
     flex-wrap: wrap;
+    /* width: 100%; */
+    /* background-color: hotpink; */
 }
 .namePok {
     margin-bottom: 1%;
@@ -258,45 +262,46 @@ option{
     margin: 2%;
     max-width: 30%;
 }
-#compareBut{
-    background-color: purple;
-    margin: 5%;
-}
 /* QUINTA PANTALLA */
 #screen5{
     margin-top: 5em;
     flex-direction: column;
+    /* display: flex; */
+    justify-content: space-around;
+    align-items: center;
 }
 .inputContCalc{
+    background-color: green;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    margin-bottom: 3%;
+    width: 60%;
 }
 .inputsCalc{
-    margin-top: 4%;
-    margin-bottom: 5%;
+    background-color: grey;
+    margin: 4% 3%;
     border-style: solid;
     width: 50%;
     border-width: 3px;
     border-color: transparent;
     border-bottom-color: #ffffff;
-    font-size: 1.4em;
-}
-#contCalc{
-    justify-content: center;
-    display: flex;
-    align-items: center;
-}
-#btn-calc{
-    background-color: rgba(207, 38, 38, 0.767);
     font-size: 100%;
+}
+.contCalc{
+ width: 50%;
+ display: flex;
+}
+.button{
+    background-color: rgba(207, 38, 38, 0.767);
+    font-size: 95%;
     border-radius: 0.5em;
     border: none;
-    width: 15em;
+    width: 60%;
+    min-width: 80px;
+    margin:auto;
     height: 2.5em;
-    outline: none;
 }
 #btn-calc:hover{
     background-color: rgb(240, 111, 88);
