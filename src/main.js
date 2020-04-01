@@ -61,6 +61,7 @@ select1Elem.addEventListener('change', () => {
   const select1Value = select1Elem.value;
   s3dataElem.innerHTML = `${(orderBy(pokemones, select1Value)).map(showInfo).join('')}`;
 });
+// Filter
 select2Elem.addEventListener('change', () => {
   const select2Value = select2Elem.value.toLowerCase();
   s3dataElem.innerHTML = `${(typeFilter(pokemones, select2Value)).map(showInfo).join('')}`;
@@ -70,7 +71,8 @@ const poke1 = document.getElementsByName('comparePoke')[0];
 const poke2 = document.getElementsByName('comparePoke')[1];
 const searchCompEl = document.querySelector('#searchIconC');
 // const inputCompEl = document.querySelectorAll('input');
-const inputCompEl = document.getElementById('inputComp');
+const inputCompEl = document.getElementsByName('inputComp')[0];
+const inputCompEl2 = document.getElementsByName('inputComp')[1];
 
 mCompare.addEventListener('click', () => {
   screen1Elem.style.display = 'none';
@@ -82,9 +84,10 @@ mCompare.addEventListener('click', () => {
 });
 searchCompEl.addEventListener('click', () => {
   const inVa = inputCompEl.value;
+  const inVal = inputCompEl2.value;
   // console.log(inVa);
   poke1.innerHTML = `jejeje ${searcher(pokemones, inVa)}`;
-  poke2.innerHTML = 'jejeje';
+  poke2.innerHTML = `jejeje ${searcher(pokemones, inVa)}`;
 });
 
 
