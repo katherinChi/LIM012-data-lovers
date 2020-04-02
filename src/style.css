@@ -302,6 +302,7 @@ option{
     min-width: 80px;
     margin:auto;
     height: 2.5em;
+    outline: none;
 }
 #btn-calc:hover{
     background-color: rgb(240, 111, 88);
@@ -319,11 +320,11 @@ option{
     align-items: center;
     z-index: 3;
 }
-#s5CandyCalc{
+#s5data{
     display: flex;
     flex-direction: column;
 }
-#nombreEvolution{
+#nameEvolution{
     margin-top: 5%;
     text-transform: capitalize;
     font-size: 2em;
@@ -331,7 +332,7 @@ option{
 }
 #contCandyCost{
     background-color: rgba(211, 247, 202, 0.904);
-    border-radius: 5%;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     width: 10em;

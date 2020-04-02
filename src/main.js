@@ -2,7 +2,8 @@
 //  {} cuando solo llamas a una funcion determinada no a toda la hoja
 import data from './data/pokemon/pokemon.js';
 import {
-  showInfo, searcher, orderBy, typeFilter, showInfoCalc,
+  searcher, showInfo, orderBy, typeFilter, showInfoCalc,
+  // showAllData,
 } from './data.js';
 
 const pokemones = data.pokemon;
@@ -61,7 +62,7 @@ select1Elem.addEventListener('change', () => {
   const select1Value = select1Elem.value;
   s3dataElem.innerHTML = `${(orderBy(pokemones, select1Value)).map(showInfo).join('')}`;
 });
-// Filter
+// Type Filter
 select2Elem.addEventListener('change', () => {
   const select2Value = select2Elem.value.toLowerCase();
   s3dataElem.innerHTML = `${(typeFilter(pokemones, select2Value)).map(showInfo).join('')}`;
@@ -87,7 +88,7 @@ searchCompEl.addEventListener('click', () => {
   const inVal = inputCompEl2.value;
   // console.log(inVa);
   poke1.innerHTML = `jejeje ${searcher(pokemones, inVa)}`;
-  poke2.innerHTML = `jejeje ${searcher(pokemones, inVa)}`;
+  poke2.innerHTML = `jejeje ${searcher(pokemones, inVal)}`;
 });
 
 
@@ -108,5 +109,7 @@ mCandy.addEventListener('click', () => {
 
 calcular.addEventListener('click', () => {
   s5dataElem.style.display = 'flex';
-  s5dataElem.innerHTML = `${showInfoCalc(pokemones, inputNamePoke, numCandies)}`;
+  const inputNumCandy = numCandies.value;
+  const inputNameEl = inputNamePoke.value.toLowerCase();
+  s5dataElem.innerHTML = `${showInfoCalc(pokemones, inputNameEl, inputNumCandy)}`;
 });
