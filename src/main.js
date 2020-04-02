@@ -1,4 +1,4 @@
-//  DOM
+
 //  {} cuando solo llamas a una funcion determinada no a toda la hoja
 import data from './data/pokemon/pokemon.js';
 import {
