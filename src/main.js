@@ -23,6 +23,7 @@ const s5dataElem = document.getElementById('s5data');
 // document.getElementsByTagName(select[]);
 const mHome = document.querySelector('#home');
 const mPokedex = document.querySelector('#pokedex');
+const mCompare = document.querySelector('#compare');
 const mCandy = document.querySelector('#candiesCalc');
 
 // Segunda Pantalla -Buscador
@@ -77,6 +78,30 @@ select2Elem.addEventListener('change', () => {
   const select2Value = select2Elem.value.toLowerCase();
   s3dataElem.innerHTML = `${(typeFilter(pokemones, select2Value)).map(showInfo).join('')}`;
 });
+// Compare
+const poke1 = document.getElementsByName('comparePoke')[0];
+const poke2 = document.getElementsByName('comparePoke')[1];
+const searchCompEl = document.querySelector('#searchIconC');
+// const inputCompEl = document.querySelectorAll('input');
+const inputCompEl = document.getElementsByName('inputComp')[0];
+const inputCompEl2 = document.getElementsByName('inputComp')[1];
+
+mCompare.addEventListener('click', () => {
+  screen1Elem.style.display = 'none';
+  screen2Elem.style.display = 'none';
+  screen3Elem.style.display = 'none';
+  screen5Elem.style.display = 'none';
+  screen4Elem.style.display = 'flex';
+  // screen4Elem.innerHTML = `${showInfo(pokemones, inputSearchIconCElem)}`;
+});
+searchCompEl.addEventListener('click', () => {
+  const inVa = inputCompEl.value;
+  const inVal = inputCompEl2.value;
+  // console.log(inVa);
+  poke1.innerHTML = `jejeje ${searcher(pokemones, inVa)}`;
+  poke2.innerHTML = `jejeje ${searcher(pokemones, inVal)}`;
+});
+
 
 
 const calcular = document.getElementById('btn-calc');
@@ -87,6 +112,7 @@ mCandy.addEventListener('click', () => {
   screen1Elem.style.display = 'none';
   screen2Elem.style.display = 'none';
   screen3Elem.style.display = 'none';
+  screen4Elem.style.display = 'none';
   s5dataElem.style.display = 'none';
   screen5Elem.style.display = 'flex';
   inputNamePoke.value = '';

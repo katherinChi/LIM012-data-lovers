@@ -57,7 +57,6 @@ export const orderBy = (poke, order) => {
       }
       return 0;
     } */
-
     if (order === 'desc') {
       // eslint-disable-next-line no-nested-ternary
       return (a.name < b.name) ? 1 : ((a.name > b.name) ? -1 : 0);
