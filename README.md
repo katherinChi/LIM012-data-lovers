@@ -61,8 +61,8 @@ el problema (o problemas) que tiene tu usuario. -->
 
 El proyecto "POKEMON" fue diseñado para que pueda ser utilizado por usuarios expertos en batalla del juego "PokemonGo" cuyo objetivo sea encontrar información relevante para batallar y potenciar las habilidades de sus pokemons.
 El diseño presentado resuelve el inconveniente de no tener una información precisa de
-un pokemon en especifico al momento de escoger uno para el combate. Presentamos una ficha técnica con datos escenciales que ayudaran a nuestros usuarios a encontrar esta información.
-Además de tener un buscador para que el acceso a la data sea mucho más rapido. También brindamos el filtrado por tipo para que pueda seleccionar uno en especifico y el ordenar por letra de forma ascendente y descendente para que sea más sencillo encontrar por nombre el pokemon a consultar.
+un pokemon en especifico al momento de escoger uno para el combate. Presentamos una ficha técnica con datos esenciales que ayudaran a nuestros usuarios a encontrar esta información.
+Además de tener un buscador para que el acceso a la data sea mucho más rapido. También brindamos el filtrado por tipo para que pueda seleccionar uno en especifico y el ordenar por letra de forma ascendente y descendente para que sea más sencillo encontrar por nombre el pokemon a consultar. Agregamos el Candy Calc donde los maestros pokemon podrán calcular cuántos caramelos necesitan para hacer evolucionar a su pokemon al siguiente nivel.
 
 ### Historias de usuario
 
@@ -221,7 +221,7 @@ diseño debe seguir los fundamentos de _visual design_. -->
 
 #### Testeos de usabilidad
 
-Se realizó el test de usabilidad en 5 usuarios y el resultado mostró lo siguiente:
+Se realizó el test de usabilidad en 6 usuarios y el resultado mostró lo siguiente:
 ##### Usuario 1:
 Mostró demora al localizar los botones necesarios para realizar cada tarea encomendada.
 El tener tanta información conglomerada lo confundía. Para solucionarlo decidimos dejar de lado la opción de búsqueda avanzada y colocar la información que contenía como parte del menu.
@@ -237,6 +237,9 @@ El usuario indicó que en la segunda pantalla no sabía si tenía que escoger un
 
 ##### Usuario 5:
 Al realizar todas las modificaciones anteriores, el quinto usuario al que se aplico el test de usabilidad, afirmo que consideraba que teniamos un diseño amigable y entendía perfectamente para que era cada boton que mostrabamos. Lo cual fue respaldado con el tiempo de respuesta al realizar las tareas encomendadas.
+
+##### Usuario 6:
+Indico que en el momento de realizar las tareas no encontro la forma de retroceder, por lo que vimos conveniente agregar esta opción para que puedan retornar a la pagina anterior.
 
 <!-- Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
 en base a los resultados, deberás iterar tus diseños. Cuéntanos

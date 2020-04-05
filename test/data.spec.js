@@ -1,8 +1,15 @@
 import {
-  typeFilter, orderBy, candyCalculator, searcher, showAllData, showInfo, showInfoCalc,
+  searcher, showInfo, orderBy, typeFilter, showInfoCalc, showAllData,
 } from '../src/data';
 
-const input = [{
+const outputOrder = [{
+  num: 1,
+  name: 'bulbasaur',
+  type: [
+    'grass',
+    'poison'],
+},
+{
   num: 1,
   name: 'bulbasaur',
   type: [
@@ -41,8 +48,16 @@ const inputDesorder = [{
   name: 'porygon',
   type: [
     'normal'],
-}];
-const output1 = [{
+},
+{
+  num: 1,
+  name: 'bulbasaur',
+  type: [
+    'grass',
+    'poison'],
+},
+];
+const outputType = [{
   num: 137,
   name: 'porygon',
   type: [
@@ -60,6 +75,13 @@ const outputOrderDesc = [{
   type: [
     'rock',
     'ground'],
+},
+{
+  num: 1,
+  name: 'bulbasaur',
+  type: [
+    'grass',
+    'poison'],
 },
 {
   num: 1,
@@ -115,36 +137,47 @@ const dato = {
     },
   },
   {
-    num: '014',
-    name: 'kakuna',
-    generation: {
-      num: 'generation i',
-      name: 'kanto',
-    },
-    about: 'Kakuna remains virtually immobile as it clings to a tree. However, on the inside, it is extremely busy as it prepares for its coming evolution. This is evident from how hot the shell becomes to the touch.',
-    img: 'https://www.serebii.net/pokemongo/pokemon/014.png',
+    num: '002',
+    name: 'ivysaur',
+    about: 'There is a bud on this Pokémons back. To support its weight, Ivysaurs legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, its a sign that the bud will bloom into a large flower soon.',
+    img: 'https://www.serebii.net/pokemongo/pokemon/002.png',
     size: {
-      height: '0.61 m',
-      weight: '10.0 kg',
+      height: '0.99 m',
+      weight: '13.0 kg',
     },
-    type: [
-      'bug',
-      'poison',
-    ],
-    stats: {
-      'base-attack': '46',
-      'base-defense': '75',
+  },
+  {
+    num: '003',
+    name: 'venusaur',
+    about: "There is a large flower on Venusaur's back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower's aroma soothes the emotions of people.",
+    img: 'https://www.serebii.net/pokemongo/pokemon/003.png',
+    size: {
+      height: '2.01 m',
+      weight: '100.0 kg',
+    },
+    evolution: {
+      candy: 'bulbasaur candy',
+      'prev-evolution': [{
+        num: '002',
+        name: 'ivysaur',
+        'candy-cost': '100',
+        'prev-evolution': [{
+          num: '001',
+          name: 'bulbasaur',
+          'candy-cost': '25',
+        }],
+      }],
     },
   },
   ],
 };
-const inputShow = dato.pokemon[0];
+const inputShow = dato.pokemon;
+const inputShowAll = dato.pokemon[0];
 const outputShowInfo = `
   <div class="imgCont">
       <span class="circle">001</span>
-      <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="pokemonImage">
-      <span> bulbasaur</span>
-      <p id="001" class="more">More</p>
+      <img class="bulbasaur" src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="pokemonImage">
+      <span class="bulbasaur"> bulbasaur</span>
   </div>
   `;
 const outputShowAll = `
@@ -168,18 +201,16 @@ const outputShowAll = `
       <p id="about" class="infoCont">Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.</p>
     `;
 const outputShowCan = `
-  <div id="candyCalc">
-    <div id="contImg">
-      <img src="https://www.serebii.net/pokemongo/pokemon/002.png" alt="pokemonImage">
-    </div>
-    <div id="contCandyCost">
-      <p class="contW"> You need </p>
-      <span id="candyCost" class="contW">17</span>
-      <p class="contW"> Candies </p>
-    </div>
-  </div>
-  <span id="nameEvolution">Next Evolution:Ivysaur</span>
-  `;
+      <div id="candyCalc">
+        <div id="contImg">
+          <img src="https://www.serebii.net/pokemongo/pokemon/002.png" alt="pokemonImage">
+        </div>
+        <div id="contCandyCost">
+          <p class="contW"> You need <span id="candyCost">17</span> Candies </p>
+        </div>
+      </div>
+      <span id="nameEvolution">Next Evolution: ivysaur</span>
+      `;
 
 describe('searcher', () => {
   it('is a function', () => {
@@ -188,6 +219,9 @@ describe('searcher', () => {
   it('Debería retornar los datos del pokemon ingresado', () => {
     expect(searcher(inputShow, 'bulbasaur')).toEqual(outputShowAll);
   });
+  it('Retorna error', () => {
+    expect(searcher(inputShow, 'bulbasur')).toEqual('Invalid Name');
+  });
 });
 
 describe('showInfo', () => {
@@ -195,7 +229,7 @@ describe('showInfo', () => {
     expect(typeof showInfo).toBe('function');
   });
   it('Muestra info', () => {
-    expect(showInfo(inputShow)).toEqual(outputShowInfo);
+    expect(showInfo(inputShowAll)).toEqual(outputShowInfo);
   });
 });
 
@@ -204,7 +238,7 @@ describe('typeFilter', () => {
     expect(typeof typeFilter).toBe('function');
   });
   it('Debe filtrar por tipo', () => {
-    expect(typeFilter(input, 'normal')).toEqual(output1);
+    expect(typeFilter(inputDesorder, 'normal')).toEqual(outputType);
   });
 });
 
@@ -213,25 +247,16 @@ describe('orderBy', () => {
     expect(typeof orderBy).toBe('function');
   });
   it('Debe ordenar los nombres de forma ascendente', () => {
-    expect(orderBy(inputDesorder, 'asc')).toEqual(input);
+    expect(orderBy(inputDesorder, 'asc')).toEqual(outputOrder);
   });
   it('Debe ordenar los nombres de forma descendente', () => {
     expect(orderBy(inputDesorder, 'desc')).toEqual(outputOrderDesc);
   });
   it('Debe ordenar los números de forma ascendente', () => {
-    expect(orderBy(inputDesorder, 'numUp')).toEqual(input);
+    expect(orderBy(inputDesorder, 'numUp')).toEqual(outputOrder);
   });
   it('Debe ordenar los números de forma descendente', () => {
     expect(orderBy(inputDesorder, 'numDown')).toEqual(inputDesorder);
-  });
-});
-
-describe('candyCalculator', () => {
-  it('candyCalculator ir a function', () => {
-    expect(typeof candyCalculator).toBe('function');
-  });
-  it('Debe restar dos parametros', () => {
-    expect(candyCalculator(50, 20)).toEqual(30);
   });
 });
 
@@ -240,7 +265,7 @@ describe('showAllData', () => {
     expect(typeof showAllData).toBe('function');
   });
   it('Muestra todo', () => {
-    expect(showAllData(inputShow)).toEqual(outputShowAll);
+    expect(showAllData(inputShowAll)).toEqual(outputShowAll);
   });
 });
 
@@ -250,5 +275,11 @@ describe('showInfoCalc', () => {
   });
   it('Muestra los candies', () => {
     expect(showInfoCalc(inputShow, 'bulbasaur', 8)).toEqual(outputShowCan);
+  });
+  it('Retorna Error', () => {
+    expect(showInfoCalc(inputShow, 'bulbasur', 8)).toEqual('Invalid Name');
+  });
+  it('No evoluciona', () => {
+    expect(showInfoCalc(inputShow, 'venusaur', 8)).toEqual('El pokemon ya tuvo todas sus evoluciones');
   });
 });
