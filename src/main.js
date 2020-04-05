@@ -7,6 +7,7 @@ import {
 } from './data.js';
 
 const pokemones = data.pokemon;
+// const pokemonese=Object.values(data);
 const inputSearchElem = document.getElementById('inputSearch');
 const searchIconElem = document.getElementById('searchIcon');
 const screen1Elem = document.getElementById('screen1');
@@ -24,6 +25,7 @@ const mHome = document.querySelector('#home');
 const mPokedex = document.querySelector('#pokedex');
 const mCompare = document.querySelector('#compare');
 const mCandy = document.querySelector('#candiesCalc');
+
 // Segunda Pantalla -Buscador
 searchIconElem.addEventListener('click', () => {
   screen1Elem.style.display = 'none';

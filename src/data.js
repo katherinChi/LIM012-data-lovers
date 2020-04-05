@@ -1,5 +1,4 @@
 //  Funcionalidad en data
-//  muestro la info
 export const showAllData = poke => `
     <p class="namePok"> ${poke.name}</p>
     <section id=firstRow>
@@ -40,56 +39,24 @@ export const searcher = (data, value) => {
   if (info) {
     return info;
   }
-  return 'El nombre ingresado no es correcto';
+  return 'Invalid Name';
 };
 // Ordena Alfabeticamente
 export const orderBy = (poke, order) => {
   let arrSort = [];
   arrSort = poke.sort((a, b) => {
-    const nameA = a.name;
-    const nameB = b.name;
-    const numA = a.num;
-    const numB = b.num;
     if (order === 'asc') {
-      if (nameA > nameB) {
-        return 1;
-      }
-      if (nameA < nameB) {
-        return -1;
-      }
-      return 0;
+      // eslint-disable-next-line no-nested-ternary
+      return (a.name > b.name) ? 1 : ((a.name < b.name) ? -1 : 0);
     }
-    /* return (nameA > nameB) ? 1 : ((nameA < nameB) ? -1 : 0); */
     if (order === 'desc') {
-      if (nameA > nameB) {
-        return -1;
-      }
-      if (nameA < nameB) {
-        return 1;
-      }
-      return 0;
+      // eslint-disable-next-line no-nested-ternary
+      return (a.name < b.name) ? 1 : ((a.name > b.name) ? -1 : 0);
     }
-    //  numero descendente
-    if (order === 'numDown') {
-      if (numA > numB) {
-        return -1;
-      }
-      if (numA < numB) {
-        return 1;
-      }
-      return 0;
-    }
-    // numero ascendente
-    if (order === 'numUp') {
-      if (numA < numB) {
-        return -1;
-      }
-      if (numA > numB) {
-        return 1;
-      }
-      return 0;
-    }
-    return arrSort; /* el error del eslint se soluciona y no veo cambios en el front//verificar!! */
+    //  numero ascendente
+    if (order === 'numUp') { return (a.num - b.num); }
+    // numero descendente
+    return (b.num - a.num);
   });
   return arrSort;
 };
@@ -101,25 +68,22 @@ export const typeFilter = (poke, tipo) => {
   return arrFilt;
 };
 //  Cálculo
-export const candyCalculator = (param1, param2) => {
+/* export const candyCalculator = (param1, param2) => {
   const resta = param1 - param2;
   return resta;
-};
+}; */
 export const showInfoCalc = (pokes, inputName, inputNum) => {
-  // const inputNamePoke = inputName.value.toLowerCase();
-  // const inputNumCandy = inputNum.value;
   let candyCalc = '';
   const nameFilt = pokes.filter(pok => inputName === pok.name);
   if (nameFilt.length === 0) {
-    return 'Invalid name';
+    return 'Invalid Name';
   }
   if ((nameFilt[0].evolution['next-evolution']) === undefined) {
-    return 'el pokemon ya tuvo todas sus evoluciones';
+    return 'El pokemon ya tuvo todas sus evoluciones';
   }
   {
-    const candyCost = nameFilt[0].evolution['next-evolution'][0]['candy-cost'];
-    const nameEvolution = nameFilt[0].evolution['next-evolution'][0].name;
-    const searchEvolution = pokes.filter(x => nameEvolution === x.name);
+    const nextEvolution = nameFilt[0].evolution['next-evolution'][0];
+    const searchEvolution = pokes.filter(x => nextEvolution.name === x.name);
     const imgEvolution = searchEvolution[0].img;
     candyCalc = `
       <div id="candyCalc">
@@ -127,12 +91,10 @@ export const showInfoCalc = (pokes, inputName, inputNum) => {
           <img src="${imgEvolution}" alt="pokemonImage">
         </div>
         <div id="contCandyCost">
-          <p class="contW"> You need </p>
-          <span id="candyCost" class="contW">${candyCalculator(candyCost, inputNum)}</span>
-          <p class="contW"> Candies </p>
+          <p class="contW"> You need <span id="candyCost">${(nextEvolution['candy-cost'] - inputNum)}</span> Candies </p>
         </div>
       </div>
-      <span id="nameEvolution">Next Evolution: ${nameEvolution}</span>
+      <span id="nameEvolution">Next Evolution: ${nextEvolution.name}</span>
       `;
     return candyCalc;
   }
