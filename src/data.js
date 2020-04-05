@@ -21,7 +21,7 @@ export const showAllData = poke => `
     `;
 // Muestra solo un poco
 export const showInfo = data => `
-  <div class="imgCont">
+  <div class="imgCont" >
       <span class="circle">${data.num}</span>
       <img class="${data.name}" src="${data.img}" alt="pokemonImage">
       <span class="${data.name}"> ${data.name}</span>
