@@ -21,11 +21,12 @@ export const showAllData = poke => `
     `;
 // Muestra solo un poco
 export const showInfo = data => `
-  <div class="imgCont">
+  <div class="imgCont" >
       <span class="circle">${data.num}</span>
       <img src="${data.img}" alt="pokemonImage">
       <span> ${data.name}</span>
       <p id="${data.num}" class="more">More</p>
+      <p id="click" class="more">click</p>
   </div>
   `;
 // Buscador

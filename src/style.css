@@ -49,8 +49,12 @@ li{
 #icon{
     display: none;
 }
+#click{
+    color: indigo;
+}
 main{
-    background-color:blueviolet;
+    /* background-color:blueviolet; */
+    min-width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,6 +79,10 @@ footer{
 .inactive{
     display: none;
 }
+.flex{
+    display: flex;
+}
+
 .screen{
     /* background-color:red; */
     backdrop-filter: brightness(0.4);
@@ -101,7 +109,7 @@ footer{
     border-width: 3px;
     border-color: transparent;
     border-bottom-color: #ffffff;
-    width: 50%;
+    width: 30%;
  }
 input{
     background-color: transparent;
@@ -121,6 +129,7 @@ input{
 #screen2{
     padding-bottom: 3%;
     margin:4% 20%; /* para que aparezca debajo del menu */
+    z-index: 2;
 }
 span{
     text-transform: capitalize;
@@ -219,6 +228,7 @@ p{
     width: 100%;
     margin-top: 5em;
     flex-direction: column;
+    z-index: 0;
 }
 .buttons{
     display: flex;
@@ -252,18 +262,8 @@ option{
     padding: 1% 4%;
     color: #000000;
 }
+/* Cuarta PANTALLA */
 #screen4{
-    width: 100%;
-    margin-top: 5em;
-    flex-direction: column;
-}
-#screen4 section{
-    /* background-color: pink; */
-    margin: 2%;
-    max-width: 30%;
-}
-/* QUINTA PANTALLA */
-#screen5{
     margin-top: 5em;
     flex-direction: column;
     /* display: flex; */
@@ -320,7 +320,7 @@ option{
     align-items: center;
     z-index: 3;
 }
-#s5data{
+#s4data{
     display: flex;
     flex-direction: column;
 }
@@ -416,7 +416,5 @@ header{
     margin-top: 10%;
     font-size: 1em;
 }
-#s5CandyCalc{
-    margin-top: -10%;
-}
+
 }
