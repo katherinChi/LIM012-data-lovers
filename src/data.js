@@ -21,7 +21,7 @@ export const showAllData = poke => `
     `;
 // Muestra solo un poco
 export const showInfo = data => `
-  <div class="imgCont" >
+  <div class="imgCont">
       <span class="circle">${data.num}</span>
       <img class="${data.name}" src="${data.img}" alt="pokemonImage">
       <span class="${data.name}"> ${data.name}</span>
@@ -57,6 +57,7 @@ export const orderBy = (poke, order) => {
       }
       return 0;
     } */
+
     if (order === 'desc') {
       // eslint-disable-next-line no-nested-ternary
       return (a.name < b.name) ? 1 : ((a.name > b.name) ? -1 : 0);
@@ -77,7 +78,6 @@ export const orderBy = (poke, order) => {
   });
   return arrSort;
 };
-
 
 // Filtra por tipo
 export const typeFilter = (poke, tipo) => {

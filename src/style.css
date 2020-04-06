@@ -25,7 +25,6 @@ header {
     background:rgba(39, 121, 39, 0.932);
     position: fixed;
     width: 100%;
-    height: 9%;
     top: 0;
     z-index: 99;
 }
@@ -40,8 +39,8 @@ nav{
 }
 ul{
     list-style: none;
-    margin: 0;
-    padding: 0;
+/*     margin: 0;
+    padding: 0; */
     display: flex;
     justify-content: flex-end;
     width: 100%;
@@ -54,12 +53,9 @@ li{
 #icon{
     display: none;
 }
-#click{
-    color: indigo;
-}
 main{
-    min-width: 200px;
-    display: flex;
+/*     background-color:blueviolet;
+ */ display: flex;
     justify-content: center;
     align-items: center;
     top: 10%;
@@ -83,10 +79,6 @@ footer{
 .inactive{
     display: none;
 }
-.flex{
-    display: flex;
-}
-
 .screen{
     /* background-color:red; */
     backdrop-filter: brightness(0.4);
@@ -104,9 +96,6 @@ footer{
     width: 45%;
     height: auto;
     margin-top: 15%;
-    /*width: 50%;
-    height: auto;
-    margin-top: 13%;*/
 }
 .inputCont{
     display: flex;
@@ -117,7 +106,7 @@ footer{
     border-width: 3px;
     border-color: transparent;
     border-bottom-color: #ffffff;
-    width: 30%;
+    width: 50%;
  }
 input{
     background-color: transparent;
@@ -140,7 +129,6 @@ input{
 #screen2{
     padding-bottom: 3%;
     margin:4% 20%; /* para que aparezca debajo del menu */
-    z-index: 2;
 }
 span{
     text-transform: capitalize;
@@ -166,6 +154,7 @@ p{
 #firstRow{
     display:flex;
     justify-content: space-around;
+    /* background-color: black; */
     margin: 1% 10%;
     padding: 1%10%;
     align-content:space-around;
@@ -241,7 +230,6 @@ p{
     width: 100%;
     margin-top: 5em;
     flex-direction: column;
-    z-index: 0;
 }
 .buttons{
     display: flex;
@@ -273,8 +261,8 @@ option{
     padding: 1% 4%;
     color: #000000;
 }
-/* Cuarta PANTALLA */
-#screen4{
+/* QUINTA PANTALLA */
+#screen5{
     margin-top: 5em;
     flex-direction: column;
     /* display: flex; */
@@ -282,6 +270,7 @@ option{
     align-items: center;
 }
 .inputContCalc{
+   /*  background-color: green; */
     display: flex;
     justify-content: space-between;
     margin-left: auto;
@@ -290,6 +279,7 @@ option{
     width: 60%;
 }
 .inputsCalc{
+    /* background-color: grey; */
     margin: 4% 3%;
     border-style: solid;
     width: 50%;
@@ -329,7 +319,7 @@ option{
     align-items: center;
     z-index: 3;
 }
-#s4data{
+#s5data{
     display: flex;
     flex-direction: column;
 }
