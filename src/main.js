@@ -13,7 +13,6 @@ const searchIconElem = document.getElementById('searchIcon');
 const screen1Elem = document.getElementById('screen1');
 const screen2Elem = document.getElementById('screen2');
 const screen3Elem = document.getElementById('screen3');
-const screen4Elem = document.getElementById('screen4');
 const screen5Elem = document.getElementById('screen5');
 const select1Elem = document.getElementById('selectOrder');
 const select2Elem = document.getElementById('selectType');
@@ -46,7 +45,6 @@ mHome.addEventListener('click', () => {
   screen1Elem.style.display = 'flex';
   screen2Elem.style.display = 'none';
   screen3Elem.style.display = 'none';
-  screen4Elem.style.display = 'none';
   screen5Elem.style.display = 'none';
   inputSearchElem.value = '';
 });
