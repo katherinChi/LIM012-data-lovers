@@ -76,7 +76,6 @@ select2Elem.addEventListener('change', () => {
   s3dataElem.innerHTML = `${(typeFilter(pokemones, select2Value)).map(showInfo).join('')}`;
 });
 
-
 const calcular = document.getElementById('btn-calc');
 const inputNamePoke = document.getElementById('inputSearchCalc');
 const numCandies = document.getElementById('inputNumCalc');
